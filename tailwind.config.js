@@ -1,20 +1,44 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
-export default {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/**/*.blade.php',
-        './resources/**/*.js',
-        './resources/**/*.vue',
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+module.exports = {
+  content: [
+    './resources/**/*.blade.php',
+    './resources/**/*.js',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'surface': {
+          'default': '#00BCD4',
+          'darker': '#007180',
         },
+        'border': {
+          'default': '#00BCD4',
+          'darker': '#007180',
+        },
+        'grayscale': {
+          'text': {
+            'negative': '#0B0E0E',
+            'caption': '#E3E7E8',
+            'body': '#AAB8BB',
+            'subtitle': '#C6D0D2',
+          },
+        },
+        'colours': {
+          'grayscale': {
+            950: '#0B0E0E',
+            900: '#171B1C',
+          },
+        },
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+      },
     },
-    plugins: [],
-};
+  },
+  plugins: [],
+}
