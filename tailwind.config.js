@@ -1,44 +1,50 @@
-import forms from '@tailwindcss/forms';
-const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
+const forms = require('@tailwindcss/forms');
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './resources/**/*.blade.php',
-    './resources/**/*.js',
+  "content": [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js"
   ],
-  theme: {
-    extend: {
+  "theme": {
+    "extend": {
       colors: {
-        'surface': {
-          'default': '#00BCD4',
-          'darker': '#007180',
+        primary: '#00BCD4',                // used for buttons, links, CTA headings
+        surface: {
+          default: '#0B0E0E',              // page background
+          card: '#171B1C',                 // cards and containers
+          form: "#171B1C"                 // form background
         },
-        'border': {
-          'default': '#00BCD4',
-          'darker': '#007180',
+        border: {
+          subtle: '#00BCD4',               // outlines on cards
         },
-        'grayscale': {
-          'text': {
-            'negative': '#0B0E0E',
-            'caption': '#E3E7E8',
-            'body': '#AAB8BB',
-            'subtitle': '#C6D0D2',
-          },
-        },
-        'colours': {
-          'grayscale': {
-            950: '#0B0E0E',
-            900: '#171B1C',
-          },
+        text: {
+          default: '#AAB8BB',             // main paragraph text
+          heading: '#FFFFFF',             // heading text
+          subheading: '#00BCD4',          // “Designed by musicians...” line
+          label: '#E3E7E8',               // smaller captions or labels
         },
       },
-      fontFamily: {
-        'inter': ['Inter', 'sans-serif'],
-        'poppins': ['Poppins', 'sans-serif'],
-        'roboto': ['Roboto', 'sans-serif'],
-      },
-    },
+      "spacing": {},
+      "borderRadius": {},
+      "boxShadow": {},
+      "fontFamily": {
+        "inter": [
+          "Inter",
+          "sans-serif"
+        ],
+        "poppins": [
+          "Poppins",
+          "sans-serif"
+        ],
+        "roboto": [
+          "Roboto",
+          "sans-serif"
+        ]
+      }
+    }
   },
-  plugins: [],
-}
+  "plugins": [
+    "require('@tailwindcss/forms')"
+  ]
+};

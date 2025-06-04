@@ -1,20 +1,60 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
+
 use App\Http\Controllers\ContactController;
 
+Auth::routes(); // This enables register, login, etc.
+
 // Public Homepage
+// Public facing routes
 Route::get('/', function () {
-    return view('home');
+    return view('public.home');
 })->name('home');
+
+Route::view('/about', 'public.about')->name('about');
+
+Route::get('/features', function () {
+    return view('public.features');
+})->name('features');
+
+Route::view('/pricing', 'public.pricing')->name('pricing');
+Route::view('/contact', 'public.contact')->name('contact');
+Route::view('/faq', 'public.faq')->name('faq');
 
 // Contact form handler
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
-// Auth Routes (only if you haven’t already)
-use Illuminate\Support\Facades\Auth;
-Auth::routes(); // This enables register, login, etc.
+// Carousel data
+Route::get('/carousel-data/{folder}', function ($folder) {
+    $basePath = public_path("images");
+    $folderPath = File::exists("$basePath/$folder") ? "$basePath/$folder" : "$basePath/default";
+    $captionFile = "$folderPath/captions.json";
 
-Auth::routes();
+    $images = collect(File::files($folderPath))
+        ->filter(fn($file) => in_array($file->getExtension(), ['jpg', 'jpeg', 'png', 'webp']))
+        ->sortBy(fn($file) => $file->getFilename())
+        ->values()
+        ->map(fn($file) => asset("images/" . basename($folderPath) . "/" . $file->getFilename()))
+        ->all();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    $captions = File::exists($captionFile)
+        ? json_decode(File::get($captionFile), true)
+        : [];
+
+    return response()->json([
+        'images' => $images,
+        'captions' => $captions,
+    ]);
+});
+
+// Registration and Login
+Route::view('/register', 'auth.register')->name('register');
+Route::view('/login', 'auth.login')->name('login');
+
+// Behind the login routes
+
+
+
