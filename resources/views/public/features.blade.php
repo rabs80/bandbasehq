@@ -1,9 +1,9 @@
 @extends('layouts.public')
 
 @section('content')
-    <section>
+    <div class="max-w-screen-xl mx-auto p-6 space-y-6">
         <!-- Hero -->
-        <x-global.hero-section />
+        <x-public.global.hero-section />
         <div class="mb-8">
             <h1 class="heading-h1">BandBaseHQ Features</h1>
             <h2 class="mt-4 subheading">This is the features page. Add some juicy content here!</p>
@@ -32,5 +32,5 @@
                 <li>Feature 3</li>
             </ul>
         </div>
-    </section>
+    </div>
 @endsection

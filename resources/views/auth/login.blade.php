@@ -1,7 +1,9 @@
 @extends('layouts.public')
 
 @section('content')
-<div class="container">
+<div class="max-w-screen-xl mx-auto p-6 space-y-6">
+    <!-- Hero -->
+    <x-public.global.hero-section />
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

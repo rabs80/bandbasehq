@@ -18,9 +18,9 @@
                 </div>
             </form>
 
-            <x-button type="submit" form="contact-form">
+            <x-public.button type="submit" form="contact-form">
                 Send
-            </x-button>
+            </x-public.button>
         </div>
 
         <img src="{{ asset('images/performer-rhs.jpg') }}" alt="Performer Right" class="rounded-[30px] w-[350px] h-[350px] object-cover">

@@ -49,7 +49,7 @@
                 @endforeach
             </ul>
             <div class="text-center">
-                <x-button :href="url()->to(route('features') . $feature['button-target'])">
+                <x-public.button :href="url()->to(route('features') . $feature['button-target'])">
                     {{ $feature['button'] }}
                 </x-button>
             </div>

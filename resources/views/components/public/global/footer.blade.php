@@ -2,7 +2,7 @@
     <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
 
         {{-- Left: Footer Nav --}}
-        <x-global.footer-nav />
+        <x-public.global.footer-nav />
 
        <div class="flex justify-center gap-40 md:flex-1 order-3 md:order-none">
             <a href="https://facebook.com" target="_blank" aria-label="Facebook"

@@ -7,6 +7,7 @@
             Whether you're a solo act or a full band, we streamline gig planning, tour logistics, marketing campaigns,
             and more — so you can focus on the music!
         </p>
+        <x-public.button :href="url()->to(route('about'))" class="min-w-[200px]">About</x-public.button>
     </div>
     <div class="card-image flex-2">
         <img src="{{ asset('images/home-about.png') }}" class="rounded-[30px]">
