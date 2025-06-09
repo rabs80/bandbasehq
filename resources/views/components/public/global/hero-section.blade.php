@@ -18,7 +18,7 @@
         >
     </template>
 
-    <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 z-10 bg-black/30 rounded-[30px]">
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 z-10 rounded-[30px]">
         <h1 x-text="captions[currentIndex]?.title || ''"
             class="text-4xl md:text-5xl font-bold drop-shadow-lg mb-4 transition-opacity duration-1000 ease-in-out"
             :class="{ 'opacity-0': fade, 'opacity-100': !fade }"

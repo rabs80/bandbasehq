@@ -8,7 +8,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-surface-default">
-    <x-public.global.header />
+    <x-public.header.header />
 
     <main class="min-h-screen">
         <section class="max-w-screen-xl mx-auto px-6">
@@ -16,6 +16,6 @@
         </section>
     </main>
 
-    <x-public.global.footer />
+    <x-public.footer.footer />
 </body>
 </html>

@@ -5,7 +5,7 @@
         <!-- Hero -->
         <x-public.global.hero-section />
 
-        <h1 class="heading-h1">BandBaseHQ Features</h1>
+        <h1 class="heading-h1">Agent Features</h1>
 
         <!-- Features Header -->
         <x-public.global.card-image
@@ -13,13 +13,7 @@
             subtitle="A system for Venues and Agents, as well as Performers!"
             image="images/home-about.png"
         >
-            <p>Honing years of experience, consulting with Venues and Agents, BandBaseHQ manages the whole gamut of organising gigs and tours for all involved.
-                <ul class="list-disc pl-6">
-                    <li>Performers get to focus on music, </li>
-                    <li>Venues concentrate on bookings,</li>
-                    <li>Agents get easy collaboration.'</li>
-                </ul>
-            </p>
+            Honing years of experience, consulting with Venues and Agents, BandBaseHQ manages the whole gamut of organising gigs and tours for all involved. Performers get to focus on music, Venues concentrate on bookings, Agents get easy collaboration.
         </x-public.global.card-image>
 
         <!-- Feature categories -->

@@ -2,13 +2,12 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Response;
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\RegistrationController;
 
-Auth::routes(); // This enables register, login, etc.
+Auth::routes(['register' => false]);
 
-// Public Homepage
 // Public facing routes
 Route::get('/', function () {
     return view('public.home');
@@ -19,6 +18,10 @@ Route::view('/about', 'public.about')->name('about');
 Route::get('/features', function () {
     return view('public.features');
 })->name('features');
+
+Route::view('/band-features', 'public.features.bands')->name('band-features');
+Route::view('/venue-features', 'public.features.venues')->name('venue-features');
+Route::view('/agent-features', 'public.features.agents')->name('agent-features');
 
 Route::view('/pricing', 'public.pricing')->name('pricing');
 Route::view('/contact', 'public.contact')->name('contact');
@@ -51,7 +54,12 @@ Route::get('/carousel-data/{folder}', function ($folder) {
 });
 
 // Registration and Login
-Route::view('/register', 'auth.register')->name('register');
+Route::get('/register/{role?}', [RegistrationController::class, 'show'])
+    ->where('role', 'band|venue|agent')
+    ->name('register');
+
+Route::post('/register', [RegistrationController::class, 'submit'])->name('register.submit');
+
 Route::view('/login', 'auth.login')->name('login');
 
 // Behind the login routes
