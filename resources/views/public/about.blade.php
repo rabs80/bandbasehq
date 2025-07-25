@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('content')
-    <div class="max-w-screen-xl mx-auto px-6">
+    <div class="max-w-screen-xl mx-auto p-6">
         <div id="about-hero" class="mt-3 mb-3">
             <x-public.global.hero-section />
         </div>
@@ -35,7 +35,7 @@
             </x-public.global.card-image>
         </div>
 
-        <div id="about-mission" class="mt-3 mb-0">
+        <div id="about-mission" class="mt-3 mb-3">
             <x-public.global.card-image
                 title="Our Mission"
                 subtitle="Why we created BandBaseHQ"

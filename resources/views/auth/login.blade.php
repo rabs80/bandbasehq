@@ -1,7 +1,7 @@
 @extends('layouts.public')
 
 @section('content')
-    <div class="max-w-screen-xl mx-auto px-6">
+    <div class="max-w-screen-xl mx-auto p-6">
         <div id="login-hero" class="mt-3 mb-3">
             <!-- Hero -->
             <x-public.global.hero-section />
