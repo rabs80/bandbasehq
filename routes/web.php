@@ -32,7 +32,7 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contact.send'
 
 // Carousel data
 Route::get('/carousel-data/{folder}', function ($folder) {
-    $basePath = public_path("images");
+    $basePath = public_path("images/carousel");
     $folderPath = File::exists("$basePath/$folder") ? "$basePath/$folder" : "$basePath/default";
     $captionFile = "$folderPath/captions.json";
 
@@ -40,7 +40,7 @@ Route::get('/carousel-data/{folder}', function ($folder) {
         ->filter(fn($file) => in_array($file->getExtension(), ['jpg', 'jpeg', 'png', 'webp']))
         ->sortBy(fn($file) => $file->getFilename())
         ->values()
-        ->map(fn($file) => asset("images/" . basename($folderPath) . "/" . $file->getFilename()))
+        ->map(fn($file) => asset("images/carousel/" . basename($folderPath) . "/" . $file->getFilename()))
         ->all();
 
     $captions = File::exists($captionFile)

@@ -11,7 +11,7 @@
     $layoutClass = $reverse ? 'md:flex-row-reverse' : 'md:flex-row';
 @endphp
 
-<section class="flex flex-col {{ $layoutClass }} gap-8 items-center my-12">
+<section class="flex flex-col {{ $layoutClass }} gap-8 items-center my-6">
     <div class="card flex-1 space-y-4">
         <h2 class="heading-h2">{{ $title }}</h2>
         <p class="subheading">{{ $subtitle }}</p>

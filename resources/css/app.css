@@ -3,55 +3,60 @@
 @tailwind utilities;
 
 @layer components {
-  .heading-h1 {
-    @apply font-inter text-[48px] font-bold text-text-heading;
-  }
+    .heading-h1 {
+        @apply font-inter text-[48px] font-bold text-text-heading;
+    }
 
-  .heading-h2 {
-    @apply font-inter text-[36px] font-bold text-text-heading;
-  }
+    .heading-h2 {
+        @apply font-inter text-[36px] font-bold text-text-heading;
+    }
 
-  .subheading {
-    @apply font-inter text-[24px] font-semibold text-primary;
-  }
+    .subheading {
+        @apply font-inter text-[24px] font-semibold text-primary;
+    }
 
-  .header-nav-text {
-    @apply text-cyan-500 text-2xl font-medium;
-  }
+    .header-nav-text {
+        @apply text-cyan-500 text-2xl font-medium;
+    }
 
-  .footer-nav-text {
-    @apply text-cyan-500 text-xl font-medium;
-  }
+    .footer-nav-text {
+        @apply text-cyan-500 text-xl font-medium;
+    }
 
-  .body-text {
-    @apply font-inter text-[16px] leading-[150%] text-text-default;
-  }
+    .body-text {
+        @apply font-inter text-[16px] leading-[150%] text-text-default;
+    }
 
-  .card-heading {
-    @apply font-poppins text-xl font-semibold text-white;
-  }
+    .card-heading {
+        @apply font-poppins text-xl font-semibold text-white;
+    }
 
-  .caption {
-    @apply text-xs font-extralight text-text-label;
-  }
+    .caption {
+        @apply text-xs font-extralight text-text-label;
+    }
 
-  .btn-primary {
-  @apply inline-block px-6 py-2 rounded-full bg-primary text-black font-semibold text-lg hover:bg-[#00aabb] transition;
-}
+    .btn-primary {
+    @apply inline-block px-6 py-2 rounded-full bg-primary text-black font-semibold text-lg hover:bg-[#00aabb] transition;
+    }
 
-.card {
-  @apply bg-surface-card border border-border-subtle rounded-[30px] p-6 md:p-8;
-}
+    .card {
+    @apply bg-surface-card border border-border-subtle rounded-[30px] p-6 md:p-8;
+    }
 
-.card-image {
-  @apply bg-surface-card border border-border-subtle rounded-[30px];
-}
+    .card-image {
+    @apply bg-surface-card border border-border-subtle rounded-[30px];
+    }
 
-.form {
-    @apply flex flex-col flex-1 gap-6 bg-surface-form px-8;
-}
+    .form {
+        @apply flex flex-col flex-1 gap-6 bg-surface-form px-8;
+    }
 
-.form-elements {
-    @apply py-2 rounded-[30px];
-}
+    .form-elements {
+        @apply py-2 rounded-[30px];
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
 }

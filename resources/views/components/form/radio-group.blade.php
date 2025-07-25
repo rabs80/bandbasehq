@@ -1,9 +1,10 @@
 @props([
     'name',
     'label' => ucfirst($name),
-    'options' => [], // ['value' => 'Label']
+    'options' => [],
     'required' => false,
-    'layout' => 'horizontal', // or 'vertical'
+    'layout' => 'horizontal',
+    'selected' => null,
 ])
 
 @php
@@ -11,7 +12,7 @@
 @endphp
 
 <div class="mb-4">
-    <label class="block text-sm font-semibold text-white mb-2">{{ $label }}</label>
+    <label class="block text-xl font-semibold text-white mb-2">{{ $label }}</label>
     <div class="flex {{ $layoutClass }}">
         @foreach ($options as $value => $display)
             <label class="flex items-center gap-2 text-white">
@@ -21,7 +22,7 @@
                     value="{{ $value }}"
                     x-model="role"
                     class="accent-primary"
-                    @if(old($name, $role) === $value) checked @endif
+                    @checked(old($name, $selected) === $value)
                     @if($required) required @endif
                 >
                 {{ $display }}

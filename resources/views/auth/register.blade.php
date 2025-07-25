@@ -1,14 +1,17 @@
 @extends('layouts.public')
 
 @section('content')
-    <div class="max-w-screen-xl mx-auto p-6 space-y-6">
-        <!-- Hero -->
-        <x-public.global.hero-section />
-        <div class="mb-8">
+    <div class="max-w-screen-xl mx-auto px-6">
+        <div id="register-hero" class="mt-3 mb-3">
+            <!-- Hero -->
+            <x-public.global.hero-section />
+        </div>
+
+        <div id="register-title" class="mt-3 mb-3">
             <h1 class="heading-h1">BandBaseHQ Registration</h1>
         </div>
 
-        <x-layout>
+        <div id="register-form" class="mt-3 mb-3">
             <section class="max-w-xl mx-auto p-6 bg-surface-card border border-border-subtle rounded-[30px]">
                 <h2 class="heading-h1 mb-6 text-center">Register Your Account</h2>
 
@@ -16,7 +19,7 @@
                     $role = old('role', $role ?? 'band');
                 @endphp
 
-                <form action="{{ route('register.submit') }}" method="POST">
+                <form x-data="{ role: '{{ old('role', $role ?? 'band') }}' }" action="{{ route('register.submit') }}" method="POST">
                     @csrf
 
                     {{-- Radio group for selecting user type --}}
@@ -29,6 +32,7 @@
                             'venue' => 'Venue',
                             'agent' => 'Agent'
                         ]"
+                        :selected="$role"
                         required
                     />
 
@@ -61,7 +65,6 @@
                     <x-public.button class="mt-6 w-full">Register</x-public.button>
                 </form>
             </section>
-        </x-layout>
-
+        </div>
     </div>
 @endsection
